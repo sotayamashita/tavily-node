@@ -1,0 +1,117 @@
+openapi: 3.0.0
+info:
+  title: Tavily Search API
+  version: 0.0.0
+  description: Tavily Search API optimized for LLMs and RAG, offering efficient, quick, and persistent search results.
+externalDocs:
+  description: Original Taviliy API docs here
+  url: https://docs.tavily.com/docs/tavily-api/rest_api
+servers:
+  - url: https://api.tavily.com/
+paths:
+  /search:
+    post:
+      summary: Search for data based on a query.
+      operationId: search
+      tags:
+        - Search
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - api_key
+                - query
+              properties:
+                api_key:
+                  type: string
+                  description: Your unique API key.
+                query:
+                  type: string
+                  description: The search query string.
+                search_depth:
+                  type: string
+                  description: The depth of the search, basic or advanced.
+                  enum:
+                    - basic
+                    - advanced
+                  default: basic
+                include_images:
+                  type: boolean
+                  description: Include a list of query related images in the response.
+                include_answer:
+                  type: boolean
+                  description: Include answers in the search results.
+                include_raw_content:
+                  type: boolean
+                  description: Include raw content in the search results.
+                max_results:
+                  type: integer
+                  description: The number of maximum search results to return.
+                include_domains:
+                  type: array
+                  items:
+                    type: string
+                  description: A list of domains to specifically include in the search results.
+                exclude_domains:
+                  type: array
+                  items:
+                    type: string
+                  description: A list of domains to specifically exclude from the search results.
+      responses:
+        '200':
+          description: Successful search result
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  answer:
+                    type: string
+                  query:
+                    type: string
+                  response_time:
+                    type: string
+                  images:
+                    type: array
+                    items:
+                      type: string
+                  follow_up_questions:
+                    type: array
+                    items:
+                      type: string
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        title:
+                          type: string
+                        url:
+                          type: string
+                        content:
+                          type: string
+                        raw_content:
+                          type: string
+                        score:
+                          type: string
+        '400':
+          description: Bad Request - Your request is invalid.
+        '401':
+          description: Unauthorized - Your API key is wrong.
+        '403':
+          description: Forbidden — The endpoint requested is hidden for administrators only.
+        '404':
+          description: Not Found — The specified endpoint could not be found.      
+        '405':
+          description: Method Not Allowed — You tried to access an endpoint with an invalid method.
+        '429':
+          description: Too Many Requests — You're requesting too many results! Slow down!
+        '500':
+          description: Internal Server Error — We had a problem with our server. Try again later.
+        '503':
+          description: Service Unavailable — We're temporarily offline for maintenance. Please try again later.
+        '504':
+          description: Gateway Timeout — We're temporarily offline for maintenance. Please try again later.
