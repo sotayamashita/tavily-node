@@ -1,22 +1,26 @@
 {
-  "name": "tavily-node",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "tavily",
+  "version": "0.0.1",
+  "author": "Speakeasy",
+  "main": "./index.js",
+  "sideEffects": false,
   "scripts": {
-    "prettier:base": "prettier --parser typescript --single-quote",
-    "prettier:check": "npm run prettier:base -- --list-different \"src/**/*.{ts,tsx}\"",
-    "prettier:write": "npm run prettier:base -- --write \"src/**/*.{ts,tsx}\"",
-    "prepare": "husky"
+    "lint": "eslint --max-warnings=0 src",
+    "build": "tsc",
+    "prepare": "npm run build"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "peerDependencies": {
+    "zod": ">= 3"
+  },
   "devDependencies": {
-    "@types/node": "^20.11.26",
-    "husky": "^9.0.11",
-    "prettier": "^3.2.5",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.4.2"
+    "@types/jsonpath": "^0.2.4",
+    "@typescript-eslint/eslint-plugin": "^6.13.2",
+    "@typescript-eslint/parser": "^6.13.2",
+    "eslint": "^8.55.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.0",
+    "typescript": "^5.3.3",
+    "zod": "^3.22.4"
   }
 }
