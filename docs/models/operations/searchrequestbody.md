@@ -1,0 +1,16 @@
+# SearchRequestBody
+
+
+## Fields
+
+| Field                                                              | Type                                                               | Required                                                           | Description                                                        |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| `apiKey`                                                           | *string*                                                           | :heavy_check_mark:                                                 | Your unique API key.                                               |
+| `query`                                                            | *string*                                                           | :heavy_check_mark:                                                 | The search query string.                                           |
+| `searchDepth`                                                      | [operations.SearchDepth](../../models/operations/searchdepth.md)   | :heavy_minus_sign:                                                 | The depth of the search, basic or advanced.                        |
+| `includeImages`                                                    | *boolean*                                                          | :heavy_minus_sign:                                                 | Include a list of query related images in the response.            |
+| `includeAnswer`                                                    | *boolean*                                                          | :heavy_minus_sign:                                                 | Include answers in the search results.                             |
+| `includeRawContent`                                                | *boolean*                                                          | :heavy_minus_sign:                                                 | Include raw content in the search results.                         |
+| `maxResults`                                                       | *number*                                                           | :heavy_minus_sign:                                                 | The number of maximum search results to return.                    |
+| `includeDomains`                                                   | *string*[]                                                         | :heavy_minus_sign:                                                 | A list of domains to specifically include in the search results.   |
+| `excludeDomains`                                                   | *string*[]                                                         | :heavy_minus_sign:                                                 | A list of domains to specifically exclude from the search results. |

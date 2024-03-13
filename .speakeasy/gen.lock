@@ -1,0 +1,56 @@
+lockVersion: 2.0.0
+id: c7430376-f608-48fd-8f60-e5c0aba9bfdd
+management:
+  docChecksum: 5655e74be1df2270d258a65d9f487c9d
+  docVersion: 0.0.0
+  speakeasyVersion: 1.207.1
+  generationVersion: 2.280.6
+  releaseVersion: 0.0.1
+  configChecksum: 68fa770235dc8007f9a252ec6801cc75
+features:
+  typescript:
+    constsAndDefaults: 0.1.5
+    core: 3.6.1
+    globalServerURLs: 2.82.4
+    responseFormat: 0.2.1
+generatedFiles:
+  - src/sdk/sdk.ts
+  - .eslintrc.js
+  - .npmignore
+  - RUNTIMES.md
+  - package.json
+  - src/index.ts
+  - src/lib/base64.ts
+  - src/lib/config.ts
+  - src/lib/encodings.ts
+  - src/lib/http.ts
+  - src/lib/retries.ts
+  - src/lib/schemas.ts
+  - src/lib/sdks.ts
+  - src/lib/security.ts
+  - src/lib/url.ts
+  - src/sdk/index.ts
+  - src/models/errors/sdkerror.ts
+  - src/models/errors/sdkvalidationerror.ts
+  - src/types/blobs.ts
+  - src/types/index.ts
+  - src/types/operations.ts
+  - src/types/rfcdate.ts
+  - tsconfig.json
+  - src/models/operations/search.ts
+  - src/models/components/httpmetadata.ts
+  - src/models/errors/index.ts
+  - src/models/operations/index.ts
+  - src/models/components/index.ts
+  - docs/models/operations/searchdepth.md
+  - docs/models/operations/searchrequestbody.md
+  - docs/models/operations/results.md
+  - docs/models/operations/searchresponsebody.md
+  - docs/models/operations/searchresponse.md
+  - docs/models/components/httpmetadata.md
+  - docs/sdks/tavily/README.md
+  - USAGE.md
+  - .gitattributes
+  - src/hooks/hooks.ts
+  - src/hooks/types.ts
+  - src/hooks/index.ts
